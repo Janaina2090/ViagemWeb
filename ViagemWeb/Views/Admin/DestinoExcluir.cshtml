@@ -1,0 +1,54 @@
+﻿@model ViagemWeb.Models.Destino
+
+@{
+    ViewBag.Title = "DestinoExcluir";
+}
+
+<h2>Destino: Excluir</h2>
+
+<h4>Deseja excluir este registro?</h4>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pais)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+
+
+
+        <div class="imagemForm">
+            <img src="~/imagens/@Model.Foto" style="width:500px" />
+        </div>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-light" /> |
+            @Html.ActionLink("Voltar", "DestinoListagem")
+        </div>
+    }
+</div>

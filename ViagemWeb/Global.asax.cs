@@ -11,8 +11,12 @@ namespace ViagemWeb
     {
         protected void Application_Start()
         {
+            Application["appNome"] = "ViagensOnLine";
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            
+
+
         }
     }
 }

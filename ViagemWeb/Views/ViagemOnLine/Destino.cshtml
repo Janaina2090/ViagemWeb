@@ -1,0 +1,34 @@
+﻿@model IEnumerable<ViagemWeb.Models.Destino>
+
+@{
+    ViewBag.Title = "Destino";
+}
+
+<h2>Destino</h2>
+
+
+
+@foreach (var item in Model) {
+   <div class="destino-box">
+
+       <div> <img src="~/imagens/@item.Foto"</div>
+
+       <div class="destinoNome">
+           @Html.DisplayFor(modelItem => item.Nome)
+       </div>
+       
+       <div class="destinoCidadePais">
+           @Html.DisplayFor(modelItem => item.Cidade)
+       </div>
+
+       <div class="destinoCidadePais">
+           @Html.DisplayFor(modelItem => item.Pais)
+       </div>
+
+   </div>
+
+  
+
+}
+
+</table>

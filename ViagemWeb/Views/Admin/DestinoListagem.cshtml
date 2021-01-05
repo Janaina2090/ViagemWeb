@@ -1,0 +1,46 @@
+﻿
+@model IEnumerable<ViagemWeb.Models.Destino>
+
+@{ ViewBag.Title = "DestinoListagem";}
+<h2>Destino: Listagem</h2>
+<p>@Html.ActionLink("Novo Destino", "DestinoNovo")</p>
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.Pais)
+</th>
+<th>
+    @Html.DisplayNameFor(model => model.Cidade)
+</th>
+
+<th></th>
+</tr>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            <img src="~/imagens/@item.Foto"
+                 style="height:20px" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Pais)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => item.Cidade)
+</td>
+<td>
+    @Html.ActionLink("Alterar", "DestinoAlterar",
+    new { id = item.DestinoId }) |
+    @Html.ActionLink("Excluir", "DestinoExcluir",
+    new { id = item.DestinoId })
+</td>
+</tr>
+}
+</table>
